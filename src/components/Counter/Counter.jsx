@@ -6,11 +6,11 @@ const Counter = (props) => {
   const [valor, setValor] = useState(props.value);
 
   const increment = () => {
-    setCount(count += parseInt(valor));
+    setCount((count += parseInt(valor)));
   };
 
   const decrement = () => {
-    setCount(count -= parseInt(valor));
+    setCount((count -= parseInt(valor)));
   };
 
   const reset = () => {
@@ -27,20 +27,18 @@ const Counter = (props) => {
 
   return (
     <div>
-      <div>Counter: {count}</div>
+      <h1>Counter: {count}</h1>
       <button onClick={increment}>+</button>
       <button onClick={decrement}>-</button>
       <button onClick={reset}>Reset</button>
       <br />
-      <span>
-        Set counter:{" "}
-        <input type="number" value={count} onChange={handleChange} />{" "}
-      </span>
       <br />
-      <span>
-        Set value increment:{" "}
-        <input type="number" value={valor} onChange={handleChangeValue} />
-      </span>
+      <p>Set counter:</p>
+      <input type="number" value={count} onChange={handleChange} />
+      <br />
+      <br />
+      <p>Set value increment:</p>
+      <input type="number" value={valor} onChange={handleChangeValue} />
     </div>
   );
 };
